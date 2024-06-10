@@ -1,10 +1,10 @@
-configuration DoD_Microsoft_Defender_Antivirus_STIG_v2r4
+configuration 'DoD_Microsoft_Defender_Antivirus_STIG_v2r4'
 {
     Import-DSCResource -ModuleName 'GPRegistryPolicyDsc'
     Import-DSCResource -ModuleName 'AuditPolicyDSC'
     Import-DSCResource -ModuleName 'SecurityPolicyDSC'
 
-     RegistryPolicyFile 'Registry(POL): HKLM:\Software\Policies\Microsoft\Windows Defender\PUAProtection'
+        RegistryPolicyFile 'Registry(POL): HKLM:\Software\Policies\Microsoft\Windows Defender\PUAProtection'
          {
               ValueName = 'PUAProtection'
               TargetType = 'ComputerConfiguration'
@@ -233,5 +233,4 @@ configuration DoD_Microsoft_Defender_Antivirus_STIG_v2r4
          {
              IsSingleInstance = 'Yes'
          }
-
 }

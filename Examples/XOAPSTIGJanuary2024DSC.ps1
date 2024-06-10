@@ -6,7 +6,7 @@ Configuration 'XOAPSTIGJanuary2024DSC'
         (
         )
 
-    Node 'XOAPSTIGAugust2023DSC'
+    Node 'XOAPSTIGAugust2024DSC'
     {
         DoD_Adobe_Acrobat_Reader_DC_Continuous_V2R1 'Example'
         {
