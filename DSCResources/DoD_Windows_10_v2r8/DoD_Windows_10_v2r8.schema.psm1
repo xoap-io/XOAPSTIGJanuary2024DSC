@@ -1,11 +1,10 @@
-configuration DoD_Windows_10_v2r8
+configuration 'DoD_Windows_10_v2r8'
 {
-
     Import-DSCResource -ModuleName 'GPRegistryPolicyDsc'
     Import-DSCResource -ModuleName 'AuditPolicyDSC'
     Import-DSCResource -ModuleName 'SecurityPolicyDSC'
 
-    param
+        param
         (
              [Parameter(Mandatory = $false)]
              [System.String]$ADD_YOUR_ENTERPRISE_ADMINS,
@@ -13,7 +12,7 @@ configuration DoD_Windows_10_v2r8
              [System.String]$ADD_YOUR_DOMAIN_ADMINS
         )
 
-    RegistryPolicyFile 'Registry(POL): HKLM:\Software\Classes\batfile\shell\runasuser\SuppressionPolicy'
+        RegistryPolicyFile 'Registry(POL): HKLM:\Software\Classes\batfile\shell\runasuser\SuppressionPolicy'
          {
               ValueName = 'SuppressionPolicy'
               TargetType = 'ComputerConfiguration'
@@ -1478,7 +1477,7 @@ configuration DoD_Windows_10_v2r8
               Name = 'Domain_member_Maximum_machine_account_password_age'
          }
 
-<#          SecurityOption 'SecurityRegistry(INF): Interactive_logon_Message_text_for_users_attempting_to_log_on'
+        <#          SecurityOption 'SecurityRegistry(INF): Interactive_logon_Message_text_for_users_attempting_to_log_on'
          {
               Interactive_logon_Message_text_for_users_attempting_to_log_on = 'You are accessing a U.S. Government (USG) Information System (IS) that is provided for USG-authorized use only.,By using this IS (which includes any device attached to this IS)"," you consent to the following conditions:,-The USG routinely intercepts and monitors communications on this IS for purposes including"," but not limited to"," penetration testing"," COMSEC monitoring"," network operations and defense"," personnel misconduct (PM)"," law enforcement (LE)"," and counterintelligence (CI) investigations.,-At any time"," the USG may inspect and seize data stored on this IS.,-Communications using"," or data stored on"," this IS are not private"," are subject to routine monitoring"," interception"," and search"," and may be disclosed or used for any USG-authorized purpose.,-This IS includes security measures (e.g."," authentication and access controls) to protect USG interests--not for your personal benefit or privacy.,-Notwithstanding the above"," using this IS does not constitute consent to PM"," LE or CI investigative searching or monitoring of the content of privileged communications"," or work product"," related to personal representation or services by attorneys"," psychotherapists"," or clergy"," and their assistants. Such communications and work product are private and confidential. See User Agreement for details.'
               Name = 'Interactive_logon_Message_text_for_users_attempting_to_log_on'
@@ -1574,7 +1573,7 @@ configuration DoD_Windows_10_v2r8
               Name = 'Network_access_Do_not_allow_anonymous_enumeration_of_SAM_accounts_and_shares'
          }
 
-<#          SecurityOption 'SecurityRegistry(INF): Interactive_logon_Message_title_for_users_attempting_to_log_on'
+        <#          SecurityOption 'SecurityRegistry(INF): Interactive_logon_Message_title_for_users_attempting_to_log_on'
          {
               Interactive_logon_Message_title_for_users_attempting_to_log_on = 'US Department of Defense Warning Statement'
               Name = 'Interactive_logon_Message_title_for_users_attempting_to_log_on'
@@ -1712,7 +1711,7 @@ configuration DoD_Windows_10_v2r8
               Name = 'seclogon'
          }
 
-<#          SecuritySetting 'SecuritySetting(INF): PasswordHistorySize'
+        <#          SecuritySetting 'SecuritySetting(INF): PasswordHistorySize'
          {
               PasswordHistorySize = 24
               Name = 'PasswordHistorySize'
@@ -1995,5 +1994,4 @@ configuration DoD_Windows_10_v2r8
          {
              IsSingleInstance = 'Yes'
          }
-
 }
